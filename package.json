@@ -7,7 +7,12 @@
     "mysql2": "^3.9.0"
   },
   "scripts": {
-    "dev": "node index.js"
+    "dev": "node index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EYadroshnikov/news_agency"
   },
   "devDependencies": {
     "eslint": "^8.56.0"
