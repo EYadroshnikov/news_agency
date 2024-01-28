@@ -1,7 +1,7 @@
 import express from 'express'
 import bodyParser from "body-parser";
-import articleRouter from "./routes/articleRouter.js";
-import articleSearchRouter from "./routes/articleSearchRouter.js";
+import articleRouter from "./routes/article.router.js";
+import articleSearchRouter from "./routes/article-search.router.js";
 import createConnection from "./models/connection.js";
 import 'dotenv/config';
 

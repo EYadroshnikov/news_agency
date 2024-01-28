@@ -1,5 +1,5 @@
-import articleService from '../services/articleService.js';
-import ArticleDTO from "../DTO/ArticleDTO.js";
+import articleService from '../services/article.service.js';
+import ArticleDto from "../DTO/article.dto.js";
 
 export default {
     async getAllArticles(req, res) {
@@ -14,7 +14,7 @@ export default {
 
     async createArticle(req, res) {
         try {
-            let article = new ArticleDTO({
+            let article = new ArticleDto({
                 title: req.body.title,
                 author: req.body.author,
                 text: req.body.text
@@ -39,8 +39,12 @@ export default {
 
     async findArticleByTitle(req, res) {
         try {
-            let found = await articleService.findArticleByTitle(req.body.desiredTitle);
-            res.send(found);
+            let found = await articleService.findArticleByTitle(req.query.desiredTitle);
+            if (found.length === 0) {
+                res.status(404).send(`article with title ${req.query.desiredTitle} not found`);
+            } else {
+                res.send(found)
+            }
         } catch (e) {
             res.status(500).send("server error\n" + e);
         }
@@ -48,9 +52,14 @@ export default {
 
     async findArticleByID(req, res) {
         try {
-            let found = await articleService.findArticleByID(req.body.id);
-            res.send(found)
-        } catch (e){
+            let found = await articleService.findArticleByID(req.query.id);
+            if (found.length === 0) {
+                res.status(404).send(`article with id ${req.query.id} not found`);
+            } else {
+                res.send(found)
+            }
+
+        } catch (e) {
             res.status(500).send("server error\n" + e);
         }
     }

@@ -1,4 +1,4 @@
-import articlesModel from "../models/articlesModel.js";
+import articlesModel from "../models/articles.model.js";
 
 export default {
     async getAllArticles() {

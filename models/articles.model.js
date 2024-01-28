@@ -1,4 +1,4 @@
-import {dbConnection} from "../main.js";
+import {dbConnection} from "../index.js";
 
 export default {
     async getAll() {

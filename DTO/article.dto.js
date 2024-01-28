@@ -1,4 +1,4 @@
-export default class ArticleDTO {
+export default class ArticleDto {
 
     constructor(data = null) {
         this.title = data?.title || "title";

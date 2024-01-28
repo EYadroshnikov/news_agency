@@ -7,7 +7,7 @@
     "mysql2": "^3.9.0"
   },
   "scripts": {
-    "dev": "node main.js"
+    "dev": "node index.js"
   },
   "devDependencies": {
     "eslint": "^8.56.0"
