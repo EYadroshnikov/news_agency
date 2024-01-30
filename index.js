@@ -7,7 +7,7 @@ import 'dotenv/config';
 
 
 const app = express();
-const port = 3000;
+const port = process.env.SERVER_PORT || 3000;
 
 app.use(bodyParser.json());
 app.use("/api/articles", articleRouter);
