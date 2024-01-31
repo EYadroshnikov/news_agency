@@ -10,4 +10,14 @@ export const checkErrors = (req, res, next) => {
     }
 }
 
+export const titleValidation = body('title')
+    .trim()
+    .isLength({min: 5, max: 20})
+    .withMessage('Length should be from 5 to 20 symbols')
+
+export const idValidation = body('id')
+    .isInt().withMessage("id should be integer")
+
+
+
 

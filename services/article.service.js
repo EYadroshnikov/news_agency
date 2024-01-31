@@ -1,19 +1,19 @@
-import articlesModel from "../models/articles.model.js";
+import articlesModel from "../models/article.model.js";
 
 export default {
     async getAllArticles() {
         return await articlesModel.getAll();
     },
 
-    async createArticle(article){
+    async createArticle(article) {
         return await articlesModel.createArticle(article);
     },
 
-    async deleteArticleByID(id){
+    async deleteArticleByID(id) {
         return await articlesModel.deleteArticleByID(id);
     },
 
-    async findArticleByTitle(desiredTitle){
+    async findArticleByTitle(desiredTitle) {
         return await articlesModel.findArticleByTitle(desiredTitle);
     },
 
