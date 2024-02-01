@@ -4,14 +4,14 @@ import articleRouter from "./routes/article.router.js";
 import articleSearchRouter from "./routes/article-search.router.js";
 import createConnection from "./models/connection.js";
 import 'dotenv/config';
+import routes from "./routes/index.js";
 
 
 const app = express();
 const port = process.env.SERVER_PORT || 3000;
 
 app.use(bodyParser.json());
-app.use("/api/articles", articleRouter);
-app.use("/api/articles/search", articleSearchRouter);
+app.use("/api", routes);
 
 export const dbConnection = await createConnection();
 
